@@ -1,15 +1,13 @@
-name: "R Markdown Websites Tutorial"
+name: "COVID19 Bce"
 navbar:
-  title: "HOME"
+  title: "Inicio"
   left:
-    - text: "First Observations"
-      href: first_observations.html
-    - text: "Basic Workflow"
-      href: basic_workflow.html
-    - text: "Getting Sophisticated"
-      href: getting_sophisticated.html
-    - text: "Your Turn"
-      href: your_turn.html
+    - text: "Status global"
+      href: status_global.html
+    - text: "Proyecciones Balcarce"
+      href: proyecciones_balcarce.html
+    - text: "Sobre nosotros"
+      href: about_us.html
 output_dir: "."
 output:
   html_document:

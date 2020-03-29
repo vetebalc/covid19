@@ -1,5 +1,5 @@
 ---
-title: "Now it's your turn"
+title: "Sobre nosotros"
 output:
   html_document:
     toc: true
