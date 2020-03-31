@@ -14,15 +14,21 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 source('~/git_juan/covid19_bce/scripts/plot_rates_new.R', echo=F)
 ```
 
+<br>
 
-# Status global - Argentina en el mundo
+# Status COVID19 global `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
+<br>
 
 ```{r}
 p_glob
 ```
 
-## En que estado se encuentra Argentina
+<br>
+
+## Status Argentina al `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
+
+<br>
 
 ```{r}
 p_arg_conf

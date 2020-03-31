@@ -1,9 +1,4 @@
 ---
-title: "Covid19 status en Argentina/Balcarce"
-author:  "Comision epidemiológica interinstitucional para el manejo y monitoreo de covid19 en Balcarce "
-output:
-  html_document:
-    fig_width: 1
 ---
 
 ```{r links varios, eval=FALSE, include=FALSE}
@@ -14,4 +9,10 @@ https://neherlab.org/covid19/
 https://andrecalerovaldez.shinyapps.io/CovidTimeSeries/
 ```
 
-> Dicen que una vez le preguntaron a Einstein cuál era la fuerza más  poderosa del Universo, a lo que él respondió “el interés compuesto” 
+<br>
+
+Comision epidemiológica interinstitucional para el manejo y monitoreo de covid19 en Balcarce
+----
+<br>
+
+> Alguna vez le preguntaron a Einstein cuál era la fuerza más  poderosa del Universo, a lo que él respondió: “el interés compuesto” 

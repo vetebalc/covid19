@@ -5,10 +5,14 @@ library(scales)
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-dglob1 <- readRDS("~/git_juan/covid19_bce/data/dglob1_2020-03-30.rds")
+dglob <- readRDS("~/git_juan/covid19_bce/data/dglob_2020-03-31.rds")
+# dglob <- readRDS(file = here::here("data", paste0("dglob_", Sys.Date(), ".rds")))
+# write_csv(dglob1, "~/git_juan/covid19_bce/data/dglob1_2020-03-30.csv")
 
-data_start <- dglob1 %>% pull(date) %>% min()
-data_end <- dglob1 %>% pull(date) %>% max()
+# dglob1 %>% pull(country) %>% unique()
+
+data_start <- dglob %>% pull(date) %>% min()
+data_end <- dglob %>% pull(date) %>% max()
 n_days <- interval(data_start,data_end)/days(1)
 
 ref <- tibble(fecha = data_start + days(0:n_days), 
@@ -33,10 +37,14 @@ p_glob <- ref %>%
   geom_line(aes(group=growth_rate), linetype=2, size=0.5, col="grey70")+
   geom_dl(aes(label=growth_rate), method = list(box.color = NA, "angled.boxes",
   dl.combine("last.points"), cex = 0.7))+
-  geom_line(data=dglob1, aes(x=matched_days, y=confirmed, col=country))+
-  scale_y_log10(limits = c(1,1e5), labels=ks)+
-  labs(x="Días desde inicio de la epidemia", col= NULL, title = "Casos confirmados")
-  
+  geom_line(data=dglob, aes(x=matched_days, y=confirmed, col=country))+
+  scale_y_log10(limits = c(1,1e5), breaks=c(0,1,100,1000,10000),
+                labels=c(0,1,100,1000,10000))+
+  labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
+       title = "Casos confirmados", 
+       subtitle = "Tasas de progreso diaria estan representadas por la inclinación\nde lineas punteadas representan  ")
+p_glob  
+
 # dglob1 %>%     
 #   ggplot(aes(x=matched_days, y=log(confirmed)))+ 
 #   map(1:4, ~ stat_function(fun = function (x) log((1+.x/10)^x), 

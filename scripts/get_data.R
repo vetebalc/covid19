@@ -53,7 +53,8 @@ jhd_countries <- rbind(jhd_countries, old_jhd_countries)
 
 jh_covid19_data %>%
   left_join(jhd_countries, by = "iso3c") %>%
-  select(country, iso3c, date, confirmed, deaths) -> jh_covid19_data
+  select(country, iso3c, date, confirmed, deaths) %>% 
+  mutate_at("country", as.factor) -> jh_covid19_data
 
 saveRDS(jh_covid19_data, here::here("data", paste0("global_", Sys.Date(), ".rds")))
 
@@ -63,24 +64,26 @@ saveRDS(jh_covid19_data, here::here("data", paste0("global_", Sys.Date(), ".rds"
 # data_end <- dglob1 %>% pull(date) %>% max()
 # n_days <- interval(data_start,data_end)/days(1)
 
-# dglob %>% pull(country) %>% unique()
+# dglob1 %>% pull(country) %>% unique()
 
-dglob %>% 
+jh_covid19_data %>% 
   filter(country %in% c("Argentina", "Italy", "Korea, South", "US", "Brazil")) %>% 
   mutate(days = as.numeric((date - data_start))) %>% 
-  dplyr::filter(confirmed > 0) -> dglob1
+  dplyr::filter(confirmed > 0) -> dglob
 
-start_dataset <- dglob1 %>%   
+start_dataset <- dglob %>%   
   mutate(days = as.numeric((date - data_start))) %>% 
   group_by(country) %>% 
   summarise(onset = min(days))
 
-dglob1 <- dglob1 %>% 
+dglob <- dglob %>% 
   dplyr::left_join(start_dataset) %>% 
   mutate(matched_days = days - onset, 
-         country = factor(country)) 
+         country = recode_factor(country, 
+         Brazil="Brasil", Italy = "Italia", `Korea, South` = "Korea del Sur", US = "Estados Unidos", 
+         .default = levels(country)))
 
-saveRDS(dglob1, here::here("data", paste0("dglob1_", Sys.Date(), ".rds")))
+saveRDS(dglob, here::here("data", paste0("dglob_", Sys.Date(), ".rds")))
 
 # Argentina 
 

@@ -1,8 +1,4 @@
 ---
-title: "Sobre nosotros"
-output:
-  html_document:
-    toc: true
-    toc_float: true
 ---
-
+<br><br>
+ <img src="images/grupo_trabajo.jpeg" width="600px">
