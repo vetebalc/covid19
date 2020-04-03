@@ -55,13 +55,14 @@ Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el model
 luego el modelo logístico es mejor que el exponencial.
 
 <br>
+
 ## Que tipo de infección tenemos?
 
 - importados: personas que volvieron del exterior habiendose contagiado afuera
 
-- contactos: casos por transmisión de contactos estrechos de casos importados, acumulados
+- contactos: casos por transmisión de contactos estrechos de casos importados
 
-- comunitarios: casos referidos como en estudio epidemiológico o sospechoso de comunitarios
+- comunitarios/local: casos referidos como en estudio epidemiológico o sospechoso de comunitarios
 
 <img src="plots/tipo_infeccion_ARG.jpg" width="600px">
 
