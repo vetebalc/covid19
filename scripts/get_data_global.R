@@ -56,18 +56,18 @@ jh_covid19_data %>%
   select(country, iso3c, date, confirmed, deaths) %>% 
   mutate_at("country", as.factor) -> jh_covid19_data
 
-saveRDS(jh_covid19_data, here::here("data", paste0("global_", Sys.Date(), ".rds")))
+# saveRDS(jh_covid19_data, here::here("data", paste0("global_", Sys.Date(), ".rds")))
 
 # Selected countries
 
-# data_start <- dglob1 %>% pull(date) %>% min()
-# data_end <- dglob1 %>% pull(date) %>% max()
-# n_days <- interval(data_start,data_end)/days(1)
+data_start <- jh_covid19_data %>% pull(date) %>% min()
+data_end <- jh_covid19_data %>% pull(date) %>% max()
+n_days <- interval(data_start,data_end)/days(1)
 
-# dglob1 %>% pull(country) %>% unique()
+# jh_covid19_data %>% pull(country) %>% unique()
 
 jh_covid19_data %>% 
-  filter(country %in% c("Argentina", "Italy", "Korea, South", "US", "Brazil")) %>% 
+  filter(country %in% c("Argentina", "Italy", "Korea, South", "US","Spain")) %>% 
   mutate(days = as.numeric((date - data_start))) %>% 
   dplyr::filter(confirmed > 0) -> dglob
 
@@ -80,28 +80,29 @@ dglob <- dglob %>%
   dplyr::left_join(start_dataset) %>% 
   mutate(matched_days = days - onset, 
          country = recode_factor(country, 
-         Brazil="Brasil", Italy = "Italia", `Korea, South` = "Korea del Sur", US = "Estados Unidos", 
-         .default = levels(country)))
+         Italy = "Italia", `Korea, South` = "Korea del Sur", 
+         US = "Estados Unidos", Spain = "España",
+         .default = levels(country)),
+         line_wdt = as.numeric(case_when(country == "Argentina" ~ 1, TRUE ~ 0.1))) %>% 
+  droplevels()
 
 saveRDS(dglob, here::here("data", paste0("dglob_", Sys.Date(), ".rds")))
 
-# Argentina 
+# Latam 
+# all_data %>% pull(`Country/Region`) %>% unique()
 
-url <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20historico.csv"
+jh_covid19_data %>% 
+  filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "Paraguay", "Bolivia" )) %>% 
+  mutate(days = as.numeric((date - data_start))) %>% 
+  dplyr::filter(confirmed > 0) -> latam
 
-# Agrupamos por día y obtenemos el valor máximo, ya que en 
-# estos datos acumulan por provincia
-url %>%  
-  read_csv(col_types = cols()) %>% 
-  select(fecha, dia_inicio, tot_casosconf, tot_fallecidos) -> arg0
-  
-arg0 %>% 
-  group_by(dia_inicio) %>% 
-  summarize(fecha = first(fecha),
-            tot_conf = max(tot_casosconf), 
-            tot_muert = max(tot_fallecidos)) %>%
-  mutate(
-    new_confirmados = tot_conf - lag(tot_conf, default = first(tot_conf-1)),
-    new_muertos = tot_muert - lag(tot_muert, default = first(tot_muert))) -> arg
+start_dataset <- latam %>%   
+  mutate(days = as.numeric((date - data_start))) %>% 
+  group_by(country) %>% 
+  summarise(onset = min(days))
 
-saveRDS(arg, here::here("data", paste0("arg_", Sys.Date(), ".rds")))
+latam <- latam %>% 
+  dplyr::left_join(start_dataset) %>% 
+  mutate(matched_days = days - onset) %>% droplevels()
+
+saveRDS(latam, here::here("data", paste0("latam_", Sys.Date(), ".rds")))

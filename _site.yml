@@ -2,7 +2,7 @@ name: "COVID19 Bce"
 navbar:
   title: "Inicio"
   left:
-    - text: "Status global"
+    - text: "COVID19 Status"
       href: status_global.html
     - text: "Proyecciones Balcarce"
       href: proyecciones_balcarce.html
@@ -13,5 +13,6 @@ output:
   html_document:
     theme: yeti
     highlight: textmate
+    css: _site.css
 #    include:
 #      after_body: _footer.html

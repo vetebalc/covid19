@@ -69,6 +69,7 @@ h6 {
 }
 </style>
 
+<link rel="stylesheet" href="_site.css" type="text/css" />
 
 
 
@@ -272,7 +273,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="status_global.html">Status global</a>
+  <a href="status_global.html">COVID19 Status</a>
 </li>
 <li>
   <a href="proyecciones_balcarce.html">Proyecciones Balcarce</a>
@@ -298,16 +299,34 @@ $(document).ready(function () {
 
 <p><br></p>
 <p><br></p>
-<div id="status-covid19-global-31-mar-2020" class="section level1">
-<h1>Status COVID19 global 31 mar 2020</h1>
+<div id="status-covid19-global-03-abr-2020" class="section level1">
+<h1>Status COVID19 global 03 abr 2020</h1>
+<p><br> <img src="plots/global_log.jpg" width="600px"> <br></p>
+<div id="factor-de-crecimiento-medida-del-progreso-diario-de-nuevos-casos" class="section level2">
+<h2>Factor de crecimiento: medida del progreso diario de nuevos casos</h2>
+<p><br> <img src="plots/global_GF.jpg" width="600px"> <br></p>
+</div>
+<div id="argentina-en-relación-a-los-paises-limitrofes" class="section level2">
+<h2>Argentina en relación a los paises limitrofes</h2>
+<p><br> <img src="plots/latam_lineal.jpg" width="600px"> <br></p>
+<p><img src="plots/latam_GF.jpg" width="600px"></p>
 <p><br></p>
-<p><img src="status_global_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p><br></p>
-<div id="status-argentina-al-31-mar-2020" class="section level2">
-<h2>Status Argentina al 31 mar 2020</h2>
-<p><br></p>
-<p><img src="status_global_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p><img src="status_global_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="status-argentina-al-03-abr-2020" class="section level2">
+<h2>Status Argentina al 03 abr 2020</h2>
+<p><br> <img src="plots/p_ARG.jpg" width="600px"> <br></p>
+</div>
+<div id="qué-modelo-ajusta-mejor-al-progreso-de-infectados-en-argentina" class="section level2">
+<h2>Qué modelo ajusta mejor al progreso de infectados en Argentina?</h2>
+<p><br> <img src="plots/models_ARG.jpg" width="600px"> <br></p>
+<p>Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el modelo exponencial, luego el modelo logístico es mejor que el exponencial.</p>
+<p><br> ## Que tipo de infección tenemos?</p>
+<ul>
+<li><p>importados: personas que volvieron del exterior habiendose contagiado afuera</p></li>
+<li><p>contactos: casos por transmisión de contactos estrechos de casos importados, acumulados</p></li>
+<li><p>comunitarios: casos referidos como en estudio epidemiológico o sospechoso de comunitarios</p></li>
+</ul>
+<p><img src="plots/tipo_infeccion_ARG.jpg" width="600px"></p>
 </div>
 </div>
 
