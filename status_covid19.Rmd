@@ -7,8 +7,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 
 ```{r, eval=T}
-source('~/git_juan/covid19/scripts/rates_global.R')
-source('~/git_juan/covid19/scripts/rates_arg.R')
+source('scripts/rates_global.R')
+source('scripts/rates_arg.R')
 ```
 
 <br>
@@ -57,7 +57,7 @@ luego el modelo logístico es mejor que el exponencial.
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 ```{r}
-source('~/git_juan/covid19/scripts/mapa.R')
+source('scripts/mapa.R')
 ```
 
 <img src="plots/mapa.jpg" width="600px">

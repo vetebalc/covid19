@@ -1,13 +1,13 @@
 pacman::p_load(tidyverse, lubridate, countrycode, directlabels, scales)  
 
-options(scipen = 999)
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+# options(scipen = 999)
+# knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
-source('~/git_juan/covid19/scripts/get_data_global.R')
+source('scripts/get_data_global.R')
 
-# dglob <- readRDS("~/git_juan/covid19_bce/data/dglob_2020-03-31.rds")
 dglob <- readRDS(file = here::here("data", "global_last.rds")) %>% 
    mutate(country = fct_relevel(country, "Argentina"))
+
 # dglob %>% pull(country) %>% unique()
 
 # data_start <- dglob %>% pull(date) %>% min()

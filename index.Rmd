@@ -1,17 +1,14 @@
 ---
 ---
 
-```{r links varios, eval=FALSE, include=FALSE}
-https://jules32.github.io/rmarkdown-website-tutorial/basic_workflow.html
-https://github.com/lsaravia/covid19ar/blob/master/coronavirus.r 
-https://joachim-gassen.github.io/2020/03/tidying-the-new-johns-hopkins-covid-19-datasests/
-https://neherlab.org/covid19/
-https://andrecalerovaldez.shinyapps.io/CovidTimeSeries/
-```
-
- <img src="images/vete3.jpeg" width="600px">
+<img src="images/vete3.jpeg" width="600px">
  
 ## ¿Qué es VETe?
+
+
+```{r primero, echo=TRUE}
+plot(pressure)
+```
  
 El proyecto “Vigilancia Epidemiológica Territorial” (VETe), es una herramienta integral creada por la Facultad de Ciencias Agrarias de la Universidad Nacional de Mar del Plata, el INTA Balcarce, profesionales del Hospital Fossati, del municipio de Balcarce y de la UBA.  
 
