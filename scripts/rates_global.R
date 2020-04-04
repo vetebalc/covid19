@@ -1,12 +1,12 @@
-library(tidyverse)
-library(lubridate)
-library(directlabels)
-library(scales)  
+pacman::p_load(tidyverse, lubridate, countrycode, directlabels, scales)  
+
 options(scipen = 999)
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
+source('~/git_juan/covid19/scripts/get_data_global.R')
+
 # dglob <- readRDS("~/git_juan/covid19_bce/data/dglob_2020-03-31.rds")
-dglob <- readRDS(file = here::here("data", paste0("dglob_", Sys.Date(), ".rds"))) %>% 
+dglob <- readRDS(file = here::here("data", "global_last.rds")) %>% 
    mutate(country = fct_relevel(country, "Argentina"))
 # dglob %>% pull(country) %>% unique()
 
@@ -34,7 +34,7 @@ p_glob  <- dglob %>%
               slice(1), 
             aes(label=confirmed), size = 3, 
             position=position_nudge(0.2), hjust=0, show.legend=FALSE)
-p_glob
+# p_glob
 
 ggsave(here::here("plots", "global_log.jpg"), width=6, height=4, units="in", dpi=300)
 
@@ -43,15 +43,16 @@ p_growthF <- dglob %>%
   filter(matched_days>1) %>% 
   ggplot(aes(x=matched_days, y=growth_factor))+
   geom_point(size=0.1,alpha=0.5) + 
-  geom_smooth(method="lm", se=F, span = 1)+ 
+  geom_smooth(method = "lm", formula = y ~ splines::bs(x, df = 3))+ # Cubic Spline
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
        title = bquote("Factor de crecimiento =" ~ "Nuevos casos" [t] / "Casos Acumulados"[t-1]))
+# p_growthF
 
 ggsave(here::here("plots", "global_GF.jpg"), width=6, height=4, units="in", dpi=300)
 
-latam <- readRDS(file = here::here("data", paste0("latam_", Sys.Date(), ".rds"))) %>% 
+latam <- readRDS(file = here::here("data", "latam_last.rds")) %>% 
   mutate(country = fct_relevel(country, "Argentina"))
 
 # latam %>% pull(country) %>% unique()
@@ -77,7 +78,7 @@ p_latam <- latam_long %>%
                            slice(1), 
                          aes(label=val), size = 3, 
                          position=position_nudge(0.1), hjust=0, show.legend=FALSE)  
-p_latam
+# p_latam
 
 ggsave(here::here("plots", "latam_lineal.jpg"), width=6, height=4, units="in", dpi=300)
 
@@ -86,12 +87,12 @@ p_growthF_latam <- latam %>%
   filter(matched_days>1) %>% 
   ggplot(aes(x=matched_days, y=growth_factor))+
   geom_point(size=0.1,alpha=0.5) + 
-  geom_smooth(method="lm", se=F, span = 1)+ 
+  geom_smooth(method = "lm", formula = y ~ splines::bs(x, df = 3))+ # Cubic Spline
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
        title = bquote("Factor de crecimiento =" ~ "Nuevos casos" [t] / "Casos Acumulados"[t-1]))
-p_growthF_latam
+# p_growthF_latam
 
 ggsave(here::here("plots", "latam_GF.jpg"), width=6, height=4, units="in", dpi=300)
 

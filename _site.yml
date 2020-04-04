@@ -3,7 +3,7 @@ navbar:
   title: "Inicio"
   left:
     - text: "COVID19 Status"
-      href: status_global.html
+      href: status_covid19.html
     - text: "Proyecciones Balcarce"
       href: proyecciones_balcarce.html
     - text: "Sobre nosotros"

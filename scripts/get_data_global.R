@@ -1,6 +1,4 @@
-library(tidyverse)
-library(lubridate)
-library(countrycode)
+pacman::p_load(tidyverse, lubridate, countrycode)
 
 # Global 
 
@@ -86,7 +84,8 @@ dglob <- dglob %>%
          line_wdt = as.numeric(case_when(country == "Argentina" ~ 1, TRUE ~ 0.1))) %>% 
   droplevels()
 
-saveRDS(dglob, here::here("data", paste0("dglob_", Sys.Date(), ".rds")))
+# saveRDS(dglob, here::here("data", paste0("dglob_", Sys.Date(), ".rds")))
+saveRDS(dglob, here::here("data", "global_last.rds"))
 
 # Latam 
 # all_data %>% pull(`Country/Region`) %>% unique()
@@ -105,4 +104,5 @@ latam <- latam %>%
   dplyr::left_join(start_dataset) %>% 
   mutate(matched_days = days - onset) %>% droplevels()
 
-saveRDS(latam, here::here("data", paste0("latam_", Sys.Date(), ".rds")))
+# saveRDS(latam, here::here("data", paste0("latam_", Sys.Date(), ".rds")))
+saveRDS(latam, here::here("data", "latam_last.rds"))
