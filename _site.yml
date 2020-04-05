@@ -8,6 +8,8 @@ navbar:
       href: proyecciones_balcarce.html
     - text: "Sobre nosotros"
       href: about_us.html
+    - text: "Nuestra organización"
+      href: organiza_vete.html
 output_dir: "."
 output:
   html_document:

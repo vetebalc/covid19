@@ -1,10 +1,6 @@
 ---
 ---
 
-```{r links model, eval=FALSE, include=FALSE}
-https://es.wikipedia.org/wiki/Modelaje_matem%C3%A1tico_de_epidemias
-```
-
 <br>
 
 ## Modelado de epidemias 

@@ -2,8 +2,8 @@
 ---
 <br>
 
-```{r, echo = FALSE, message = FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```{r eval=F}
+source("_site.R") # especificaciones globales
 ```
 
 ```{r, eval=T}
@@ -13,7 +13,8 @@ source('scripts/rates_arg.R')
 
 <br>
 
-# Status COVID19 global `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
+# Status COVID19 global 
+`r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
 <img src="plots/global_log.jpg" width="600px">
@@ -36,7 +37,8 @@ source('scripts/rates_arg.R')
 
 <br>
 
-## Status Argentina al `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
+## Status COVID19 Argentina al 
+`r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
 <img src="plots/p_ARG.jpg" width="600px">
@@ -53,7 +55,7 @@ luego el modelo logístico es mejor que el exponencial.
 
 <br>
 
-## Status en Sudeste de Buenos Aires  
+## Status COVID19 en Sudeste de Buenos Aires  
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 ```{r}

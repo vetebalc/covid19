@@ -57,7 +57,8 @@ pacman::p_load(tidyverse, lubridate, countrycode)
 # Datos Aliaga
 library(googlesheets)
 url_aliaga <- "https://docs.google.com/spreadsheets/d/1M7uDgWSfy6z1MNbC9FP6jTNgvY7XchJ0m-BfW88SKtQ/edit?usp=sharing"
-gs_url(url_aliaga) %>% gs_read(skip = 1) -> alia
+gsheet::gsheet2tbl(url_aliaga)
+gs_url(url_aliaga) %>% gs_read(skip = 18) -> alia
 
 arg  <- alia %>% 
   dplyr::select(Fecha, Casos=X2,	Fallecidos=X3,	Recuperados=X4,	Terapia=X5, 
