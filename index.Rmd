@@ -18,4 +18,4 @@ El sistema VETe permite:
 * tomar decisiones con datos, información respaldado en la ciencia y tecnología
 * colaborar con la intervención municipal
 
-El sistema VETe ya está disponible tanto para municipios como otros niveles del Estado, empleando diversas herramientas, como encuestas autogestionadas, telefónicas, georreferenciones (GIS), modelización predictiva, monitoreo de casos, entre otras. 
+El sistema VETe estará disponible tanto para municipios como otros niveles del Estado, empleando diversas herramientas, como encuestas autogestionadas, telefónicas, georreferenciones (GIS), modelización predictiva, monitoreo de casos, entre otras. 
