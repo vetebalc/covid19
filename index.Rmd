@@ -5,7 +5,6 @@
  
 ## ¿Qué es VETe?
 
- 
 El proyecto “Vigilancia Epidemiológica Territorial” (VETe), es una herramienta integral creada por la Facultad de Ciencias Agrarias de la Universidad Nacional de Mar del Plata, el INTA Balcarce, profesionales del Hospital Fossati, del municipio de Balcarce y de la UBA.  
 
 El sistema VETe permite:
