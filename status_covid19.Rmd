@@ -2,9 +2,16 @@
 ---
 <br>
 
-```{r eval=F}
+```{r _site.R, eval=TRUE, echo=FALSE, warning=FALSE, message=F}
 source("_site.R") # especificaciones globales
 ```
+
+Fuente de Datos
+
+COVID Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
+
+COVID Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
+
 
 ```{r, eval=T}
 source('scripts/rates_global.R')
@@ -56,7 +63,11 @@ luego el modelo logístico es mejor que el exponencial.
 <br>
 
 ## Status COVID19 en Sudeste de Buenos Aires  
-`r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
+
+Fuente:  [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
+
+Semana epidemiológica 13 (21/03/20 al 28/03/20)
+
 
 ```{r}
 source('scripts/mapa.R')

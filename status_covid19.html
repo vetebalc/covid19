@@ -301,52 +301,13 @@ $(document).ready(function () {
 
 
 <p><br></p>
-<pre class="r"><code>source(&quot;_site.R&quot;) # especificaciones globales</code></pre>
-<pre class="r"><code>source(&#39;scripts/rates_global.R&#39;)</code></pre>
-<pre><code>## Warning in countrycode(country, origin = &quot;country.name&quot;, destination = &quot;iso3c&quot;): Some values were not matched unambiguously: Diamond Princess, Kosovo, MS Zaandam
-
-## Warning in countrycode(country, origin = &quot;country.name&quot;, destination = &quot;iso3c&quot;): Some values were not matched unambiguously: Diamond Princess, Kosovo, MS Zaandam
-
-## Warning in countrycode(country, origin = &quot;country.name&quot;, destination = &quot;iso3c&quot;): Some values were not matched unambiguously: Diamond Princess, Kosovo, MS Zaandam
-
-## Warning in countrycode(country, origin = &quot;country.name&quot;, destination = &quot;iso3c&quot;): Some values were not matched unambiguously: Diamond Princess, Kosovo, MS Zaandam</code></pre>
-<pre><code>## Joining, by = &quot;country&quot;
-## Joining, by = &quot;country&quot;</code></pre>
-<pre><code>## Warning: Removed 28 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 28 rows containing missing values (geom_point).</code></pre>
-<pre><code>## Warning: Removed 26 rows containing missing values (geom_smooth).</code></pre>
-<pre><code>## Warning: Removed 25 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>## Warning: Removed 25 rows containing missing values (geom_point).</code></pre>
-<pre><code>## Warning: Removed 13 rows containing missing values (geom_smooth).</code></pre>
-<pre class="r"><code>source(&#39;scripts/rates_arg.R&#39;)</code></pre>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1], &#39;X2&#39; [2], &#39;X3&#39; [3], &#39;X4&#39; [4],
-## &#39;X5&#39; [5], &#39;X6&#39; [6], &#39;X7&#39; [7], &#39;X8&#39; [8], &#39;X9&#39; [9], &#39;X10&#39; [10], &#39;X11&#39; [11],
-## &#39;X12&#39; [12], &#39;X13&#39; [13], &#39;X14&#39; [14], &#39;X15&#39; [15], &#39;X16&#39; [16], &#39;X17&#39; [17],
-## &#39;X18&#39; [18], &#39;X19&#39; [19], &#39;X20&#39; [20], &#39;X21&#39; [21], &#39;X22&#39; [22]</code></pre>
-<pre><code>## Sheet-identifying info appears to be a browser URL.
-## googlesheets will attempt to extract sheet key from the URL.</code></pre>
-<pre><code>## Putative key: 1M7uDgWSfy6z1MNbC9FP6jTNgvY7XchJ0m-BfW88SKtQ</code></pre>
-<pre><code>## Worksheets feed constructed with public visibility</code></pre>
-<pre><code>## Accessing worksheet titled &#39;Sheet1&#39;.</code></pre>
-<pre><code>## Warning: Missing column names filled in: &#39;X1&#39; [1], &#39;X2&#39; [2], &#39;X3&#39; [3], &#39;X4&#39; [4],
-## &#39;X5&#39; [5], &#39;X8&#39; [8], &#39;X9&#39; [9]</code></pre>
-<pre><code>## Warning: Duplicated column names deduplicated: &#39;Fecha&#39; =&gt; &#39;Fecha_1&#39; [17],
-## &#39;Importados&#39; =&gt; &#39;Importados_1&#39; [18], &#39;Contacto estrecho / Conglomerado&#39;
-## =&gt; &#39;Contacto estrecho / Conglomerado_1&#39; [19], &#39;Transmisión Comunitaria&#39; =&gt;
-## &#39;Transmisión Comunitaria_1&#39; [20], &#39;En estudio&#39; =&gt; &#39;En estudio_1&#39; [21], &#39;Total&#39;
-## =&gt; &#39;Total_1&#39; [22]</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   .default = col_double(),
-##   X1 = col_character(),
-##   X9 = col_logical(),
-##   Fecha = col_character(),
-##   Fecha_1 = col_character()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
+<p>Fuente de Datos</p>
+<p>COVID Global: <a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins CSSE</a></p>
+<p>COVID Argentina: <a href="https://github.com/SistemasMapache/Covid19arData">Sistemas Mapache</a></p>
 <p><br></p>
-<div id="status-covid19-global-05-abr-2020" class="section level1">
-<h1>Status COVID19 global 05 abr 2020</h1>
+<div id="status-covid19-global" class="section level1">
+<h1>Status COVID19 global</h1>
+<p>05 abr 2020</p>
 <p><br> <img src="plots/global_log.jpg" width="600px"> <br></p>
 <div id="factor-de-crecimiento-medida-del-progreso-diario-de-nuevos-casos" class="section level2">
 <h2>Factor de crecimiento: medida del progreso diario de nuevos casos</h2>
@@ -358,8 +319,9 @@ $(document).ready(function () {
 <p><img src="plots/latam_GF.jpg" width="600px"></p>
 <p><br></p>
 </div>
-<div id="status-argentina-al-05-abr-2020" class="section level2">
-<h2>Status Argentina al 05 abr 2020</h2>
+<div id="status-covid19-argentina-al" class="section level2">
+<h2>Status COVID19 Argentina al</h2>
+<p>05 abr 2020</p>
 <p><br> <img src="plots/p_ARG.jpg" width="600px"> <br></p>
 </div>
 <div id="qué-modelo-ajusta-mejor-al-progreso-de-infectados-en-argentina" class="section level2">
@@ -368,22 +330,11 @@ $(document).ready(function () {
 <p>Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el modelo exponencial, luego el modelo logístico es mejor que el exponencial.</p>
 <p><br></p>
 </div>
-<div id="status-en-sudeste-de-buenos-aires" class="section level2">
-<h2>Status en Sudeste de Buenos Aires</h2>
-<p>05 abr 2020</p>
-<pre class="r"><code>source(&#39;scripts/mapa.R&#39;)</code></pre>
-<pre><code>## Warning in st_centroid.sfc(muni$geometry): st_centroid does not give correct
-## centroids for longitude/latitude data</code></pre>
-<pre><code>## Warning: Column `NAM` joining factor and character vector, coercing into
-## character vector</code></pre>
+<div id="status-covid19-en-sudeste-de-buenos-aires" class="section level2">
+<h2>Status COVID19 en Sudeste de Buenos Aires</h2>
+<p>Fuente: <a href="https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico">Ministerio de Salud de Buenos Aires</a></p>
+<p>Semana epidemiológica 13 (21/03/20 al 28/03/20)</p>
 <p><img src="plots/mapa.jpg" width="600px"></p>
-<pre class="r"><code>## Que tipo de infección tenemos?
-- importados: personas que volvieron del exterior habiendose contagiado afuera
-
-- contactos: casos por transmisión de contactos estrechos de casos importados
-
-- comunitarios/local: casos referidos como en estudio epidemiológico o sospechoso de comunitarios
-&lt;img src=&quot;plots/tipo_infeccion_ARG.jpg&quot; width=&quot;600px&quot;&gt;</code></pre>
 </div>
 </div>
 

@@ -1,4 +1,4 @@
-pacman::p_load(tidyverse, sf, RColorBrewer)
+pacman::p_load(tidyverse, sf)
 
 url_muni <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20Prov%20BSAS.csv"
 url_muni %>%
@@ -24,7 +24,9 @@ map1 <- ggplot(SEBA) +
                      low = 'green2',
                        mid = 'yellow',
                        high = 'red3',
-                       na.value = 'gray95')+
+                       na.value = 'gray95',
+                     breaks = seq(0, 10, 2), 
+                     labels = seq(0, 10, 2))+
   geom_text(aes(x=X, y=Y, label= NAM), size = 3,
             color = "darkblue", check_overlap = TRUE)+  
   theme_void()  
