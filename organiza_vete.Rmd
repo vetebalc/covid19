@@ -8,7 +8,15 @@ source("_site.R") # especificaciones globales
 <br><br>
 
 ## Cómo nos organizamos
+
+En grupos de trabajo, donde se abordan algunos temas específicos del proceso. Está integrado por profesionales de diversas disciplinas, conocimientos y experiencias. 
+
+Interinstitucionales: INTA + FCA + Municipio + Hospital
+
+Transdisciplinarios: medicina, estadística, modelización, comunicación, agronomía, epidemiología, veterinaria, gestión de políticas públicas, gestión del Estado y la administración pública, gestión de la ciencia,  otros
 <br>
+<br>
+
 ```{r, out.width = "250px", out.extra='style="background-color: #FFFFFF; padding:10px; display: inline-block;"'}
 # http://zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/
 logos<-list.files("logos", pattern = ".jpeg", full.names = TRUE)
@@ -48,6 +56,16 @@ Diseña procesos y construcción de herramientas, según las necesidades de info
 <br>
 <br>
 
+```{r, out.width = "150px", out.extra='style="float:left; padding:10px"'}
+knitr::include_graphics(logos[4])
+```
+<br>
+Grupo de trabajo para la para implementación del objetivo 2, mediante encuestadores y encuestadoras voluntario/as. Entre sus responsabilidades, está la conformación de grupos de encuestadores, capacitación e implementación de encuestas telefónicas, entre otras.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```{r, out.width = "150px", out.extra='style="float:left; padding:10px"'}
 knitr::include_graphics(logos[5])
