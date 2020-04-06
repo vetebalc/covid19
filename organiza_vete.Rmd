@@ -7,7 +7,7 @@ source("_site.R") # especificaciones globales
 
 <br><br>
 
-## Como estamos organizados?
+## Cómo nos organizamos
 <br>
 ```{r, out.width = "250px", out.extra='style="background-color: #FFFFFF; padding:10px; display: inline-block;"'}
 # http://zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/

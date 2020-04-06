@@ -2,7 +2,7 @@ name: "COVID19 Bce"
 navbar:
   title: "Inicio"
   left:
-    - text: "COVID19 Status"
+    - text: "Estadísticas COVID-19"
       href: status_covid19.html
     - text: "Proyecciones Balcarce"
       href: proyecciones_balcarce.html
