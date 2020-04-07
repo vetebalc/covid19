@@ -1,29 +1,44 @@
+source("_site.R") # especificaciones globales
 source('~/git_juan/covid19/scripts/get_data_arg.R')
 
-# arg <- readRDS(here::here("data", "arg_last.rds")) %>%
-#   mutate(fecha=ymd(fecha), dias =as.numeric( fecha - min(fecha))) 
+arg <- readRDS(here::here("data", "arg_last.rds")) %>%
+  mutate(dias =as.numeric( fecha - min(fecha)))
 
-p_ARG <- arg %>% 
+
+ARG_bars <- arg %>% 
   dplyr::select(fecha, `COVID positivos` = casos, Fallecidos=fallecidos)%>%  
   pivot_longer(-fecha, names_to = "var", values_to = "val") %>%
-  group_by(var) %>% 
-  mutate(new_val = val - lag(val, default = first(val-1))) %>% 
   ggplot(aes(fecha, val))+ 
-  geom_point(size=2)+#geom_smooth()+
+  geom_bar(stat="identity", fill = "steelblue") +
+  geom_text(aes(label=val), angle=90,size=2, 
+            position = position_dodge(0.9), 
+            vjust=0.7, hjust = 1.2, color="white")+
   facet_wrap(~var, scales = "free_y", ncol=1)+
-  # geom_text(aes(fecha, y= 0, label=paste0("+", new_val)),
-  #           size=3, check_overlap = FALSE)+
-  ggrepel::geom_text_repel(data=. %>%
-                             arrange(desc(val)) %>% 
-                             group_by(var) %>% 
-                             slice(1), 
-                           aes(label=val), size = 3, 
-                           position=position_nudge(0.1), hjust=1, show.legend=FALSE)+
-  scale_x_date(breaks = "2 days", minor_breaks = "1 day", 
-               labels=scales::date_format("%d/%m")) +
-  labs(y="", x="")  
+  scale_x_date(limits = c(Sys.Date() - dias_epidemia, Sys.Date()),expand = c(0, 0),
+               breaks = "2 days", minor_breaks = "1 day", 
+               labels=scales::date_format("%d/%m"))+
+  labs(y="", x="")+
+  theme(axis.text.x = element_text(angle = 60, hjust = 1))
+ARG_bars
 
-ggsave(here::here("plots", "p_ARG.jpg"), width=6,height=6,units="in",dpi=150)
+ggsave(here::here("plots", "ARG_bars.jpg"), width=6,height=6,units="in",dpi=150)
+# ARG_points <- arg %>% 
+#   dplyr::select(fecha, `COVID positivos` = casos, Fallecidos=fallecidos)%>%  
+#   pivot_longer(-fecha, names_to = "var", values_to = "val") %>%
+#   mutate(var = as.factor(var)) %>%
+#   ggplot(aes(fecha, val, col = var))+ 
+#   geom_point() + geom_line()+
+#  # geom_text(aes(label=val), angle=90,size=2, 
+#  #            position = position_dodge(0.9), 
+#  #            vjust=0.7, hjust = 1.2, color="white")+
+#   # facet_wrap(~var, scales = "free_y", ncol=1)+
+#   scale_x_date(limits = c(Sys.Date() - dias_epidemia, Sys.Date()),expand = c(0, 0),
+#                breaks = "2 days", minor_breaks = "1 day", 
+#                labels=scales::date_format("%d/%m"))+
+#   labs(y="", x="")+
+#   theme(axis.text.x = element_text(angle = 60, hjust = 1))
+# ARG_points
+
 
 # "https://raw.githubusercontent.com/lsaravia/covid19ar/master/coronavirus_ar.csv"%>%
 #   read_csv(col_types = cols()) -> saravia

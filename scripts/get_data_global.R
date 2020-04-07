@@ -55,7 +55,7 @@ n_days <- interval(data_start,data_end)/days(1)
 # jh_covid19_data %>% pull(country) %>% unique()
 
 jh_covid19_data %>% 
-  filter(country %in% c("Argentina", "Italy", "Korea, South", "US","Spain")) %>% 
+  filter(country %in% c("Argentina", "Italy", "Korea, South", "US","Spain", "France")) %>% 
   mutate(days = as.numeric((date - data_start))) %>% 
   dplyr::filter(confirmed > 0) -> dglob
 
@@ -72,6 +72,7 @@ dglob <- dglob %>%
                                  `Korea, South` = "Korea del Sur", 
                                  US = "Estados Unidos", 
                                  Spain = "España",
+                                 France = "Francia",
                                  .default = levels(country)),
          line_wdt = as.numeric(case_when(country == "Argentina" ~ 1, TRUE ~ 0.1))) %>% 
   droplevels()
@@ -84,7 +85,10 @@ saveRDS(dglob, here::here("data", "global_last.rds"))
 
 jh_covid19_data %>% 
   filter(country %in% c("Argentina", "Brazil", "Chile", "Uruguay", "Paraguay", "Bolivia" )) %>% 
-  mutate(days = as.numeric((date - data_start))) %>% 
+  mutate(days = as.numeric((date - data_start)),
+         country = recode_factor(country, 
+                                 Brazil = "Brasil", 
+                                 .default = levels(country))) %>% 
   dplyr::filter(confirmed > 0) -> latam
 
 start_dataset <- latam %>%   

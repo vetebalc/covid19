@@ -1,8 +1,6 @@
 pacman::p_load(tidyverse, lubridate, countrycode, directlabels, scales)  
 
-# options(scipen = 999)
-# knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-
+source("_site.R") # especificaciones globales
 source('scripts/get_data_global.R')
 
 dglob <- readRDS(file = here::here("data", "global_last.rds")) %>% 
@@ -10,15 +8,14 @@ dglob <- readRDS(file = here::here("data", "global_last.rds")) %>%
 
 # dglob %>% pull(country) %>% unique()
 
-# data_start <- dglob %>% pull(date) %>% min()
+data_start <- dglob %>% pull(date) %>% min()
 # data_end <- dglob %>% pull(date) %>% max()
 # n_days <- interval(data_start,data_end)/days(1)
 
-ggplot2::theme_set(theme_bw(base_size = 10))
 
 p_glob  <- dglob %>% 
   ggplot(aes(x=matched_days, y=confirmed)) +
-  geom_line(aes(col=country), size=1.2)+
+  geom_line(aes(col=country), size=1.1)+
   # scale_size_manual(guide=FALSE, values = c(1, rep(1.2, nlevels(dglob$country)-1)))+
   scale_x_continuous(expand = c(0.1, 0)) +  
   # scale_y_continuous() +  
@@ -27,7 +24,8 @@ p_glob  <- dglob %>%
                 breaks=c(0,1,10,100,1000,10000,100000),
                 labels=c(0,1,10,100,1000,10000,100000))+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
-       title = "Casos confirmados (escala logarítmica)")+
+       title = "Casos confirmados", 
+       subtitle = "Acumulados (escala logarítmica)")+
   ggrepel::geom_text_repel(data=dglob  %>% 
               arrange(desc(confirmed)) %>% 
               group_by(country) %>% 
@@ -47,7 +45,8 @@ p_growthF <- dglob %>%
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
-       title = bquote("Factor de crecimiento =" ~ "Nuevos casos" [t] / "Casos Acumulados"[t-1]))
+       title = "Factor de crecimiento",
+       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]))
 # p_growthF
 
 ggsave(here::here("plots", "global_GF.jpg"), width=6, height=4, units="in", dpi=300)
@@ -65,22 +64,24 @@ latam_long <- latam %>%
 
 p_latam <- latam_long %>% 
   ggplot(aes(matched_days, val))+ 
-  geom_line(aes(col=country),size=1.2)+
-  scale_size_manual(guide=FALSE, values = c(0.5, rep(1, nlevels(dglob$country)-1)))+
+  geom_line(aes(col=country), size=1.1)+
+  # scale_size_manual(guide=FALSE, values = c(0.5, rep(1, nlevels(dglob$country)-1)))+
   scale_x_continuous(expand = c(0.1, 0)) +  
   scale_color_discrete()+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
-       title = "Casos confirmados en países Limitrofes") + 
+       title = "Casos confirmados", 
+       subtitle = "Acumulados (escala logarítmica)")+
   facet_wrap(~var, scales = "free_y", ncol=1)+
   ggrepel::geom_text_repel(data=latam_long %>% 
                            arrange(desc(val)) %>% 
                            group_by(country, var) %>% 
                            slice(1), 
                          aes(label=val), size = 3, 
-                         position=position_nudge(0.1), hjust=0, show.legend=FALSE)  
+                         position=position_nudge(0.1),
+                         hjust=0, show.legend=FALSE)  
 # p_latam
 
-ggsave(here::here("plots", "latam_lineal.jpg"), width=6, height=4, units="in", dpi=300)
+ggsave(here::here("plots", "p_latam.jpg"), width=6, height=4, units="in", dpi=300)
 
 p_growthF_latam <- latam %>%
   mutate(growth_factor = (confirmed / lag(confirmed, default = first(confirmed))-1)*100) %>% 
@@ -91,7 +92,8 @@ p_growthF_latam <- latam %>%
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
-       title = bquote("Factor de crecimiento =" ~ "Nuevos casos" [t] / "Casos Acumulados"[t-1]))
+       title = "Factor de crecimiento",
+       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]))
 # p_growthF_latam
 
 ggsave(here::here("plots", "latam_GF.jpg"), width=6, height=4, units="in", dpi=300)

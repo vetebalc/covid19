@@ -1,22 +1,30 @@
-pacman::p_load(tidyverse, lubridate, countrycode)
+pacman::p_load(tidyverse, lubridate)
 
-#Sistemas mapache
-# url <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20historico.csv"
-# url %>%
-#   read_csv(col_types = cols()) %>%
-#   dplyr::select(fecha, dia_inicio, tot_casosconf, tot_fallecidos) -> arg0
-# 
-# arg0 %>%
-#   group_by(dia_inicio) %>%
-#   summarize(fecha = first(fecha),
-#             tot_conf = max(tot_casosconf),
-#             tot_muert = max(tot_fallecidos)) %>%
-#   mutate(
-#     new_confirmados = tot_conf - lag(tot_conf, default = first(tot_conf-1)),
-#     new_muertos = tot_muert - lag(tot_muert, default = first(tot_muert))) -> arg
-# 
-# saveRDS(arg, here::here("data", paste0("arg_", Sys.Date(), ".rds")))
-# 
+# Sistemas mapache
+url <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20historico.csv"
+
+arg0 <- read_csv(url, col_names = TRUE, 
+                 cols(tot_casosconf = col_character())) %>% 
+  dplyr::select(fecha, tot_casosconf, tot_fallecidos) %>% 
+  mutate(fecha = as_date(parse_date_time(fecha, "dmy")),
+         tot_casosconf= parse_number(tot_casosconf, 
+                                     locale = locale(grouping_mark = ".")))  
+
+inicio_arg <- arg0 %>% pull(fecha) %>% min()
+fin_arg <- arg0 %>% pull(fecha) %>% max()
+dias_epidemia <- interval(inicio_arg,fin_arg)/days(1) 
+
+arg0 %>% 
+  group_by(fecha) %>%
+  summarize(casos = max(tot_casosconf),
+            fallecidos = max(tot_fallecidos)) -> arg
+    # new_confirmados = tot_conf - lag(tot_conf, default = first(tot_conf-1)),
+    # new_muertos = tot_muert - lag(tot_muert, default = first(tot_muert))) 
+# arg %>% View
+
+saveRDS(arg, here::here("data", "arg_last.rds"))
+
+#---------------------------------------------------------------------------
 # #Datos libres
 # arg_dlibres_url <- "https://raw.githubusercontent.com/datoslibres/covid19argentina/master/datos/covid19_por_provincia_argentina.csv"
 # arg_dlibres_url %>%  
@@ -54,22 +62,23 @@ pacman::p_load(tidyverse, lubridate, countrycode)
 #        caption = "")+
 #   theme_void()
 
+#---------------------------------------------------------------------------
+
 # Datos Aliaga
-library(googlesheets)
-url_aliaga <- "https://docs.google.com/spreadsheets/d/1M7uDgWSfy6z1MNbC9FP6jTNgvY7XchJ0m-BfW88SKtQ/edit?usp=sharing"
-gsheet::gsheet2tbl(url_aliaga)
-gs_url(url_aliaga) %>% gs_read(skip = 18) -> alia
-
-arg  <- alia %>% 
-  dplyr::select(Fecha, Casos=X2,	Fallecidos=X3,	Recuperados=X4,	Terapia=X5, 
-         Negativos, Totales, decartados_epi = X8, Importados, 
-         `Contacto estrecho / Conglomerado`, `Transmisión Comunitaria`)  %>% 
-  janitor::clean_names() %>% 
-  mutate_at("fecha", dmy) %>% 
-  mutate(new_positivos = casos - lag(casos, default = first(casos-1)),
-         new_fallecidos = fallecidos - lag(fallecidos, default = first(fallecidos)))
-
-saveRDS(arg, here::here("data", "arg_last.rds"))
+# library(googlesheets)
+# url_aliaga <- "https://docs.google.com/spreadsheets/d/1M7uDgWSfy6z1MNbC9FP6jTNgvY7XchJ0m-BfW88SKtQ/edit?usp=sharing"
+# gs_url(url_aliaga) %>% gs_read(skip = 18) -> alia
+# 
+# arg  <- alia %>% 
+#   dplyr::select(Fecha, Casos=X2,	Fallecidos=X3,	Recuperados=X4,	Terapia=X5, 
+#          Negativos, Totales, decartados_epi = X8, Importados, 
+#          `Contacto estrecho / Conglomerado`, `Transmisión Comunitaria`)  %>% 
+#   janitor::clean_names() %>% 
+#   mutate_at("fecha", dmy) %>% 
+#   mutate(new_positivos = casos - lag(casos, default = first(casos-1)),
+#          new_fallecidos = fallecidos - lag(fallecidos, default = first(fallecidos)))
+# 
+# saveRDS(arg, here::here("data", "arg_last.rds"))
 # saveRDS(arg, here::here("data", paste0("arg_aliaga_", Sys.Date(), ".rds")))
 
 # arg_alia %>% 

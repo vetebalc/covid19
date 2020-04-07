@@ -6,12 +6,13 @@
 source("_site.R") # especificaciones globales
 ```
 
-Fuente de Datos
+*Fuente de Datos
 
-COVID Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
+COVID19 Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
 
-COVID Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
+COVID19 Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
 
+----
 
 ```{r, eval=T}
 source('scripts/rates_global.R')
@@ -24,23 +25,32 @@ source('scripts/rates_arg.R')
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
-<img src="plots/global_log.jpg" width="600px">
+<img src="plots/global_log.jpg" width="700px">
 <br>
 
 
-## Factor de crecimiento: medida del progreso diario de nuevos casos
+## Factor de crecimiento 
+
+Medida del progreso diario de nuevos casos
 
 <br>
-<img src="plots/global_GF.jpg" width="600px">
+<img src="plots/global_GF.jpg" width="700px">
 <br>
+
+---- 
 
 ## Argentina en relación a los paises limitrofes
 
+- Inicio de epidemia: `r inicio_arg`
+
+- Duración de epidemia al `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")`:  *`r dias_epidemia` días*
+
+
 <br>
-<img src="plots/latam_lineal.jpg" width="600px">
+<img src="plots/p_latam.jpg" width="700px" heigth="800px">
 <br>
 
-<img src="plots/latam_GF.jpg" width="600px">
+<img src="plots/latam_GF.jpg" width="700px">
 
 <br>
 
@@ -48,7 +58,7 @@ source('scripts/rates_arg.R')
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
-<img src="plots/p_ARG.jpg" width="600px">
+<img src="plots/ARG_bars.jpg" width="600px" height="700px">
 <br>
 
 ## Qué modelo ajusta mejor al progreso de infectados en Argentina?
@@ -73,7 +83,7 @@ Semana epidemiológica 13 (21/03/20 al 28/03/20)
 source('scripts/mapa_sudeste.R')
 ```
 
-<img src="plots/mapa.jpg" width="600px">
+<img src="plots/mapa.jpg" width="500px">
 
 
 ```{r, eval=FALSE}
