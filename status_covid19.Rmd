@@ -12,7 +12,8 @@ COVID19 Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
 
 COVID19 Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
 
-----
+COVID19 Buenos Aires:  [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
+
 
 ```{r, eval=T}
 source('scripts/rates_global.R')
@@ -22,59 +23,75 @@ source('scripts/rates_arg.R')
 <br>
 
 # Status COVID19 global 
+
+----
+
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
-<img src="plots/global_log.jpg" width="700px">
+```{r out.width = "600px"}
+knitr::include_graphics("plots/global_log.jpg")
+```
+<br>
+<br>
+<br>
+```{r out.width = "600px"}
+knitr::include_graphics("plots/global_GF.jpg")
+```
+<br>
+<br>
 <br>
 
+# Status COVID19 Mercosur 
 
-## Factor de crecimiento 
-
-Medida del progreso diario de nuevos casos
-
-<br>
-<img src="plots/global_GF.jpg" width="700px">
-<br>
-
----- 
-
-## Argentina en relación a los paises limitrofes
+----
 
 - Inicio de epidemia: `r inicio_arg`
-
 - Duración de epidemia al `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")`:  *`r dias_epidemia` días*
 
 
 <br>
-<img src="plots/p_latam.jpg" width="700px" heigth="800px">
+```{r out.width = "600px"}
+knitr::include_graphics("plots/p_latam.jpg")
+```
 <br>
 
-<img src="plots/latam_GF.jpg" width="700px">
-
+```{r out.width = "600px"}
+knitr::include_graphics("plots/latam_GF.jpg")
+```
+<br>
+<br>
 <br>
 
-## Status COVID19 Argentina al 
+# Status COVID19 Argentina
+
+----
+
 `r format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d %b %Y")` 
 
 <br>
-<img src="plots/ARG_bars.jpg" width="600px" height="700px">
+```{r out.width = "600px"}
+knitr::include_graphics("plots/ARG_bars.jpg")
+```
+<br>
+<br>
 <br>
 
 ## Qué modelo ajusta mejor al progreso de infectados en Argentina?
 
 <br>
-<img src="plots/models_ARG.jpg" width="600px">
+```{r out.width = "600px"}
+knitr::include_graphics("plots/models_ARG.jpg")
+```
 <br>
 
-Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el modelo exponencial, 
-luego el modelo logístico es mejor que el exponencial.
+Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el modelo exponencial, luego el modelo logístico es mejor que el exponencial.
 
 <br>
 
-## Status COVID19 en Sudeste de Buenos Aires  
+# Status COVID19 - Sudeste de Buenos Aires  
 
-Fuente:  [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
+----
 
 Semana epidemiológica 13 (21/03/20 al 28/03/20)
 
@@ -83,7 +100,9 @@ Semana epidemiológica 13 (21/03/20 al 28/03/20)
 source('scripts/mapa_sudeste.R')
 ```
 
-<img src="plots/mapa.jpg" width="500px">
+```{r out.width = "600px"}
+knitr::include_graphics("plots/mapa.jpg")
+```
 
 
 ```{r, eval=FALSE}

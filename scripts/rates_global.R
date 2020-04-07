@@ -45,8 +45,10 @@ p_growthF <- dglob %>%
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
-       title = "Factor de crecimiento",
-       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]))
+       title = "Factor de crecimiento*",
+       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]), 
+       caption = "*Medida del progreso diario de nuevos casos")
+
 # p_growthF
 
 ggsave(here::here("plots", "global_GF.jpg"), width=6, height=4, units="in", dpi=300)
@@ -92,8 +94,9 @@ p_growthF_latam <- latam %>%
   facet_wrap(~country)+
   scale_y_continuous(limits = c(0,50))+
   labs(x="Días desde inicio de la epidemia", y = "Incemento diario %", 
-       title = "Factor de crecimiento",
-       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]))
+       title = "Factor de crecimiento*",
+       subtitle = bquote("Nuevos casos" [t] / "Casos Acumulados"[t-1]), 
+       caption = "*Medida del progreso diario de nuevos casos")
 # p_growthF_latam
 
 ggsave(here::here("plots", "latam_GF.jpg"), width=6, height=4, units="in", dpi=300)
