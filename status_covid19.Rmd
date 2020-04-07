@@ -70,7 +70,7 @@ Semana epidemiológica 13 (21/03/20 al 28/03/20)
 
 
 ```{r}
-source('scripts/mapa.R')
+source('scripts/mapa_sudeste.R')
 ```
 
 <img src="plots/mapa.jpg" width="600px">
