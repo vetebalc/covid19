@@ -40,6 +40,9 @@ https://www.piersoft.it/covid19/index2.php#6/41.838/13.881
 
 - COVID19 Government Measures https://www.acaps.org/covid19-government-measures-dataset 
 
+- Oxford COVID-19 Government Response Tracker https://www.bsg.ox.ac.uk/research/research-projects/oxford-covid-19-government-response-tracker 
+
+
 ## Media
 
 - Por qué brotes como el del coronavirus crecen exponencialmente y cómo ‘aplanar la curva’ https://www.washingtonpost.com/graphics/2020/world/corona-simulator-spanish/ 
