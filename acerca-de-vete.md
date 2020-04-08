@@ -26,42 +26,35 @@ Interinstitucionales: INTA + FCA + Municipio + Hospital
 
 Transdisciplinarios: medicina, estadística, modelización, comunicación, agronomía, epidemiología, veterinaria, gestión de políticas públicas, gestión del Estado y la administración pública, gestión de la ciencia,  otros
 
----
-<img align="left" src="images/grupo_operativo.jpeg" height ="150"/>
+<img align="left" src="images/grupo_operativo.jpeg" height ="150" style="padding:5px;"/>
 Este grupo es de gestión, integra y operativiza aquellas acciones que se trabajan en los demás grupos de trabajo. Se constituye como ámbito de enlace con el equipo de “CONTROL COVID-19 operativo”, el cual está gerenciado por las autoridades Municipales del Hospital y de la Policía (Comunal, bonaerense y DDI). 
 <br clear="all"/>
 
----
-<img align="left" src="images/grupo_biblio.jpeg" height ="150"/>
+<img align="left" src="images/grupo_biblio.jpeg" height ="150" style="padding:5px;"/>
 Realiza una difusión selectiva de información (DSI) suministrando información especializada al resto de los grupos de trabajo, mediante acceso a bibliotecas y revistas científicas del mundo. 
 Se encarga de crear repositorios de la información generada en el ámbito de trabajo de los diferentes grupos.
 Busca bibliografía internacional, actualiza conceptos, sistematiza información bibliográfica, facilita la construcción de marcos teóricos y estado del arte. Es uno de los grupos que realiza el seguimiento de la comunidad científica internacional.
 <br clear="all"/>
 
----
-<img align="left" src="images/grupo_encuestas2.jpeg" height ="150"/>
+<img align="left" src="images/grupo_encuestas2.jpeg" height ="150" style="padding:5px;"/>
 Diseña procesos y construcción de herramientas, según las necesidades de información que se requiera. En este espacio se discute y diagrama, por ejemplo, tipo de encuestas, preguntas, alternativas para la implementación, entre otros.
 <br clear="all"/>
 
----
-<img align="left" src="images/grupo_encuestas.jpeg" height ="150"/>
+<img align="left" src="images/grupo_encuestas.jpeg" height ="150" style="padding:5px;"/>
 Grupo de trabajo para la para implementación del objetivo 2, mediante encuestadores y encuestadoras voluntario/as. Entre sus responsabilidades, está la conformación de grupos de encuestadores, capacitación e implementación de encuestas telefónicas, entre otras.
 <br clear="all"/>
 
----
-<img align="left" src="images/grupo_gps.jpeg" height ="150"/>
+<img align="left" src="images/grupo_gps.jpeg" height ="150" style="padding:5px;"/>
 Se ocupa de la georreferenciación de los datos y transformación de información en diversos tipos de mapas o cartografía. Se compatibilizan e integran herramientas e información.
 <br clear="all"/>
 
----
-<img align="left" src="images/grupo_analisis.jpeg" height ="150"/>
+<img align="left" src="images/grupo_analisis.jpeg" height ="150" style="padding:5px;"/>
 Este grupo de trabajo integra la información generada tanto en los otros de diversas otras fuentes.
 Analiza los resultados de las encuestas, genera modelos predictivos locales y evalúa nuevos estudios. 
 Busca adelantarse en la construcción de escenarios (simulación mediante modelos predictivos) de impacto del COVID-19 en Balcarce y en la identificación de casos o focos del virus.
 Los múltiples análisis y conclusiones, son una herramienta para la toma de decisiones.
 <br clear="all"/>
 
----
 ---
 
 ## ¿Quiénes somos?
@@ -77,38 +70,34 @@ _en construcción_
 ---
 ---
 
-<img align="right" src="images/0_facundo.jpg" height ="200"/>
+<img align="right" src="images/0_facundo.jpg" height ="200" style="padding:15px;"/>
 
 _"El sistema permite adecuar los diseños de políticas de intervención de acuerdo a lo que esté sucediendo en la localidad, lo cual implica que se pueden tomar decisiones basadas en datos e informaciones provenientes de la ciencia y tecnología. Es una oportunidad que permite dar un salto cualitativo con resultados relevantes para la comunidad. La decisión política de implementarlo permitirá dar un paso hacia la innovación en la gestión municipal frente al COVID19"_
 
-**Facundo Quiroz, director de la EEA INTA Balcarce** 
-<br clear="right"/>
+Facundo Quiroz, director de la EEA INTA Balcarce
+<br clear="all"/>
 
-#
-<img align="right" src="images/0_miguel1.png" height ="200"/>
+<img align="right" src="images/0_miguel1.png" height ="200" style="padding:15px;"/>
 
 _"En este escenario de pandemia, la propuesta permite tomar decisiones con datos e información relevada, validada y analizada en tiempo real. Es momento de poner a disposición nuestros recursos. La prioridad es la comunidad"_
 
-**Miguel Pereyra Iraola, Vicedecano de la Facultad de Ciencias Agrarias de la UNMdP**
-<br clear="right"/>
+Miguel Pereyra Iraola, Vicedecano de la Facultad de Ciencias Agrarias de la UNMdP
+<br clear="all"/>
 
-#
-<img align="right" src="images/0_francisco.jpg" height ="200"/>
+<img align="right" src="images/0_francisco.jpg" height ="200" style="padding:15px;"/>
 
 _"Es trascendental que el control de la epidemia podamos centrarlo en el comportamiento social, no basta con detectar personas con síntomas. Es por ello que en esta propuesta, estamos integrando a poblaciones en estado de vulnerabilidad, quienes no suelen tener acceso a la salud o a la información"_
 
-**Francisco Gonzáles, coordinador del Primer Nivel de Atención del Hospital Fossati**
-<br clear="right"/>
+Francisco Gonzáles, coordinador del Primer Nivel de Atención del Hospital Fossati
+<br clear="all"/>
 
-#
-<img align="right" src="images/0_julian.jpeg" height ="200"/>
+<img align="right" src="images/0_julian.jpeg" height ="200" style="padding:15px;"/>
 
 _"Estamos trabajando en la presentación de un proyecto conjunto en la Agencia Nacional de Promoción de la Investigación, Desarrollo Tecnológico y la Innovación. Esto podría ayudarnos a mejorar tanto nuestra capacidad diagnóstica como el manejo epidemiológico frente a eventos de esta naturaleza y magnitud"_
 
-**Julián Verona, jefe de laboratorio del nosocomio**
-<br clear="right"/>
+Julián Verona, jefe de laboratorio del nosocomio
+<br clear="all"/>
 
----
 ---
 
 ## Contacto
