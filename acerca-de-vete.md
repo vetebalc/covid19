@@ -1,4 +1,4 @@
-<img src="images/vete3.jpeg" width="600px">
+<img src="images/vete3.jpeg" width="400px">
  
 ## ¿Qué es VETe?
 
