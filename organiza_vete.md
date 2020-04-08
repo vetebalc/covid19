@@ -5,12 +5,11 @@ En grupos de trabajo, donde se abordan algunos temas específicos del proceso. E
 Interinstitucionales: INTA + FCA + Municipio + Hospital
 
 Transdisciplinarios: medicina, estadística, modelización, comunicación, agronomía, epidemiología, veterinaria, gestión de políticas públicas, gestión del Estado y la administración pública, gestión de la ciencia,  otros
-<br>
-<br>
+
 
 <img align="left" src="images/grupo_operativo.jpeg" height ="100"/>
 Este grupo es de gestión, integra y operativiza aquellas acciones que se trabajan en los demás grupos de trabajo. Se constituye como ámbito de enlace con el equipo de “CONTROL COVID-19 operativo”, el cual está gerenciado por las autoridades Municipales del Hospital y de la Policía (Comunal, bonaerense y DDI). 
-<br clear="right"/>
+<br clear="all"/>
 
 <img align="left" src="images/grupo_biblio.jpeg" height ="100"/>
 Realiza una difusión selectiva de información (DSI) suministrando información especializada al resto de los grupos de trabajo, mediante acceso a bibliotecas y revistas científicas del mundo. 
