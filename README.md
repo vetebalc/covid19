@@ -15,6 +15,7 @@
 
 ### R0 
 - Eficacia del confinamiento sobre disminucion de R0  https://www.medrxiv.org/content/10.1101/2020.03.03.20030593v1
+- Substantial undocumented infection facilitates the rapid dissemination of novel coronavirus (SARS-CoV2) https://science.sciencemag.org/content/early/2020/03/24/science.abb3221/tab-pdf
 
 ### Estacionalidad 
 Potential impact of seasonal forcing on a SARS-CoV-2 pandemic https://smw.ch/article/doi/smw.2020.20224
