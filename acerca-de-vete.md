@@ -7,7 +7,7 @@ _"El sistema permite adecuar los diseños de políticas de intervención de acue
 
 ---
 
-<img align="right" src="images/0_miguel1.png" height ="200" align="left"/>
+<img align="right" src="images/0_miguel1.png" height ="200" align="left" style="float:left; padding:16px"/>
 
 _"En este escenario de pandemia, la propuesta permite tomar decisiones con datos e información relevada, validada y analizada en tiempo real. Es momento de poner a disposición nuestros recursos. La prioridad es la comunidad"_
 
