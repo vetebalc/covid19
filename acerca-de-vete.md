@@ -5,7 +5,6 @@
 >**Facundo Quiroz, director de la EEA INTA Balcarce** 
 
 ---
-#
 
 > <img align="right" src="images/0_miguel1.png" height ="200" align="left"/>
 >
@@ -13,8 +12,10 @@
 >
 >**Miguel Pereyra Iraola, Vicedecano de la Facultad de Ciencias Agrarias de la UNMdP**
 
+<br clear="right"/>
+
 ---
-#
+
 
 > <img align="right" src="images/0_francisco.jpg" height ="200" align="left"/>
 > Es trascendental que el control de la epidemia podamos centrarlo en el comportamiento social, no basta con detectar personas con síntomas. Es por ello que en esta propuesta, estamos integrando a poblaciones en estado de vulnerabilidad, quienes no suelen tener acceso a la salud o a la información”
