@@ -40,10 +40,6 @@ https://www.piersoft.it/covid19/index2.php#6/41.838/13.881
 
 - COVID19 Government Measures https://www.acaps.org/covid19-government-measures-dataset 
 
-Ministerio de Salud  
-OPERATIONAL PLANNING GUIDELINES TO SUPPORT COUNTRY PREPAREDNESS AND RESPONSE
-Nyscalo on Twitter: "Vivo en Shanghái. Parece que la crisis del coronavirus empieza a estar controlada por fin en China. Os voy a contar cómo se ha combatido el virus aquí y el efecto de las medidas tomadas en la población. Vais a flipar. Dentro HILO.… https://t.co/9pHkuaZUaQ" 
-
 ## Media
 
 - Por qué brotes como el del coronavirus crecen exponencialmente y cómo ‘aplanar la curva’ https://www.washingtonpost.com/graphics/2020/world/corona-simulator-spanish/ 
