@@ -1,0 +1,14 @@
+name: "VETe"
+navbar:
+  title: "< VETe"
+  left:
+    - text: "Estadísticas"
+      href: estadisticas.html
+    - text: "Proyecciones"
+      href: proyecciones.html
+output_dir: "."
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    css: _site.css
