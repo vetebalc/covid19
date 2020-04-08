@@ -4,8 +4,6 @@ navbar:
   left:
     - text: "Estadísticas COVID-19"
       href: status_covid19.html
-    - text: "Cómo participar"
-      href: como-participar.md
     - text: "Proyecciones Balcarce"
       href: proyecciones_balcarce.html
     - text: "Sobre nosotros"
