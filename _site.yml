@@ -1,8 +1,8 @@
 name: "VETe"
 navbar:
-  title: "< VETe"
+  title: "VETe"
   left:
-    - text: "Estadísticas"
+    - text: "Estadisticas"
       href: estadisticas.html
     - text: "Proyecciones"
       href: proyecciones.html
