@@ -3,10 +3,8 @@
 ## Datasets 
 
 - COVID19 Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
-
 - COVID19 Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
-
-- COVID19 Buenos Aires:  [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
+- COVID19 Buenos Aires: [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
 
 ## Modelado
 
@@ -15,7 +13,11 @@
 - Modelo SIR y derivados https://es.wikipedia.org/wiki/Modelaje_matem%C3%A1tico_de_epidemias
 - John Hopkins https://systems.jhu.edu/research/public-health/ncov-model-2/  
 
+### R0 
 - Eficacia del confinamiento sobre disminucion de R0  https://www.medrxiv.org/content/10.1101/2020.03.03.20030593v1
+
+### Estacionalidad 
+Potential impact of seasonal forcing on a SARS-CoV-2 pandemic https://smw.ch/article/doi/smw.2020.20224
 
 ## Dashboards
 
@@ -27,8 +29,7 @@ https://vizhub.healthdata.org/gbd-compare/
 ## R - COVID19 
 
 - Top R resources https://towardsdatascience.com/top-5-r-resources-on-covid-19-coronavirus-1d4c8df6d85f
-
--  ImperialCollegeLondon https://github.com/vetebalc/covid19model 
+- ImperialCollegeLondon https://github.com/vetebalc/covid19model 
 
 ## GIS
 
@@ -39,14 +40,12 @@ https://www.piersoft.it/covid19/index2.php#6/41.838/13.881
 ## Estrategias gubernamentales
 
 - COVID19 Government Measures https://www.acaps.org/covid19-government-measures-dataset 
-
 - Oxford COVID-19 Government Response Tracker https://www.bsg.ox.ac.uk/research/research-projects/oxford-covid-19-government-response-tracker 
 
 
 ## Media
 
 - Por qué brotes como el del coronavirus crecen exponencialmente y cómo ‘aplanar la curva’ https://www.washingtonpost.com/graphics/2020/world/corona-simulator-spanish/ 
-
 - How epidemics like covid-19 end (and how to end them faster)  https://www.washingtonpost.com/graphics/2020/health/coronavirus-how-epidemics-spread-and-end/ 
 
 - Tomas Pueyo
