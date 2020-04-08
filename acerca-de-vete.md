@@ -1,6 +1,7 @@
-<img align="right" src="images/0_facundo.jpg" height ="200" align="left"/>
+> <img align="right" src="images/0_facundo.jpg" height ="200" align="left"/>
 
-> _El sistema permite adecuar los diseños de políticas de intervención de acuerdo a lo que esté sucediendo en la localidad, lo cual implica que se pueden tomar decisiones basadas en datos e informaciones provenientes de la ciencia y tecnología. Es una oportunidad que permite dar un salto cualitativo con resultados relevantes para la comunidad. La decisión política de implementarlo permitirá dar un paso hacia la innovación en la gestión municipal frente al COVID19_
+> El sistema permite adecuar los diseños de políticas de intervención de acuerdo a lo que esté sucediendo en la localidad, lo cual implica que se pueden tomar decisiones basadas en datos e informaciones provenientes de la ciencia y tecnología. Es una oportunidad que permite dar un salto cualitativo con resultados relevantes para la comunidad. La decisión política de implementarlo permitirá dar un paso hacia la innovación en la gestión municipal frente al COVID19
+
 >**Facundo Quiroz, director de la EEA INTA Balcarce** 
 
 ---
