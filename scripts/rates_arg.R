@@ -1,5 +1,5 @@
 source("_site.R") # especificaciones globales
-source('~/git_juan/covid19/scripts/get_data_arg.R')
+source('scripts/get_data_arg.R')
 
 arg <- readRDS(here::here("data", "arg_last.rds")) %>%
   mutate(dias =as.numeric( fecha - min(fecha)))

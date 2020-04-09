@@ -1,20 +1,14 @@
-name: "COVID19 Bce"
+name: "VETe"
 navbar:
-  title: "Inicio"
+  title: "VETe"
   left:
-    - text: "Estadísticas COVID-19"
-      href: status_covid19.html
-    - text: "Proyecciones Balcarce"
-      href: proyecciones_balcarce.html
-    - text: "Sobre nosotros"
-      href: about_us.html
-    - text: "Nuestra organización"
-      href: organiza_vete.html
+    - text: "Estadisticas"
+      href: estadisticas.html
+    - text: "Proyecciones"
+      href: proyecciones.html
 output_dir: "."
 output:
   html_document:
     theme: yeti
     highlight: textmate
     css: _site.css
-#    include:
-#      after_body: _footer.html

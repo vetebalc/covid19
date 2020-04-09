@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>status_covid19.utf8.md</title>
+<title>proyecciones.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -233,6 +232,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -268,21 +268,15 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Inicio</a>
+      <a class="navbar-brand" href="index.html">VETe</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="status_covid19.html">Estadísticas COVID-19</a>
+  <a href="estadisticas.html">Estadisticas</a>
 </li>
 <li>
-  <a href="proyecciones_balcarce.html">Proyecciones Balcarce</a>
-</li>
-<li>
-  <a href="about_us.html">Sobre nosotros</a>
-</li>
-<li>
-  <a href="organiza_vete.html">Nuestra organización</a>
+  <a href="proyecciones.html">Proyecciones</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -301,44 +295,27 @@ $(document).ready(function () {
 
 
 <p><br></p>
-<p>*Fuente de Datos</p>
-<p>COVID19 Global: <a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins CSSE</a></p>
-<p>COVID19 Argentina: <a href="https://github.com/SistemasMapache/Covid19arData">Sistemas Mapache</a></p>
-<p>COVID19 Buenos Aires: <a href="https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico">Ministerio de Salud de Buenos Aires</a></p>
+<div id="modelado-de-epidemias" class="section level2">
+<h2>Modelado de epidemias</h2>
+<p>El modelado matemático de epidemias permite explicar y predecir el comportamiento de agentes infecciosos y potencialmente dañinos para las poblaciones humanas (en este caso).</p>
+<p>En este caso haremos uso de un modelo clasico de epidemiologia de enfermedades infecto-contagiosas conocido com “SEIR”, de sus siglas: “S” individuos - “E” expuestos - “I” infectados - “R” recuperados.</p>
 <p><br></p>
-<div id="status-covid19-global" class="section level1">
-<h1>Status COVID19 global</h1>
-<hr />
-<p>07 abr 2020</p>
-<p><br> <img src="plots/global_log.jpg" width="600px" /> <br> <br> <br> <img src="plots/global_GF.jpg" width="600px" /> <br> <br> <br></p>
-</div>
-<div id="status-covid19-mercosur" class="section level1">
-<h1>Status COVID19 Mercosur</h1>
-<hr />
-<ul>
-<li>Inicio de epidemia: 2020-03-02</li>
-<li>Duración de epidemia al 07 abr 2020: <em>35 días</em></li>
-</ul>
-<p><br> <img src="plots/p_latam.jpg" width="600px" /> <br></p>
-<p><img src="plots/latam_GF.jpg" width="600px" /> <br> <br> <br></p>
-</div>
-<div id="status-covid19-argentina" class="section level1">
-<h1>Status COVID19 Argentina</h1>
-<hr />
-<p>07 abr 2020</p>
-<p><br> <img src="plots/ARG_bars.jpg" width="600px" /> <br> <br> <br></p>
-<div id="qué-modelo-ajusta-mejor-al-progreso-de-infectados-en-argentina" class="section level2">
-<h2>Qué modelo ajusta mejor al progreso de infectados en Argentina?</h2>
-<p><br> <img src="plots/models_ARG.jpg" width="600px" /> <br></p>
-<p>Hasta el dia 21 del comienzo de la epidemia en Argentina ajustaba mejor el modelo exponencial, luego el modelo logístico es mejor que el exponencial.</p>
+<p><img src="images/SEIR.png" width="600px"></p>
+<p><br></p>
+<p>S-Susceptible, E-expuesto (infectado), I-Infeccioso (que contagia) y R-Recuperado H-hospitalizados, C-críticos (UCI), y D - difuntos.<br />
+S -&gt; I modelado por tasa de infección (R0)(R0 afectado por las intervenciones “Int” y la estacionalidad “∿”). Ld: período de latencia; Id:periodo infeccioso.</p>
 <p><br></p>
 </div>
-</div>
-<div id="status-covid19---sudeste-de-buenos-aires" class="section level1">
-<h1>Status COVID19 - Sudeste de Buenos Aires</h1>
-<hr />
-<p>Semana epidemiológica 13 (21/03/20 al 28/03/20)</p>
-<p><img src="plots/mapa.jpg" width="600px" /></p>
+<div id="supuestos-básicos-del-modelo" class="section level2">
+<h2>Supuestos básicos del modelo</h2>
+<p><br></p>
+<p>1 - Las personas susceptibles son consideradas expuestas / infectadas por haber tenido con contacto con personas infecciosas.</p>
+<p>2 - Cada individuo infeccioso causa en promedio R0 - infecciones secundarias durante su periodo infeccioso.</p>
+<p>3 - La transmisión del virus podría tener una variación estacional que se parametriza con el parámetro “forzamiento estacional” (amplitud) y “mes pico” (mes de transmisión más eficiente).</p>
+<p>4 - Los individuos expuestos progresan a un estado sintomático / infeccioso después una latencia promedio</p>
+<p>5 - Los individuos infecciosos o se recuperan o progresan a una enfermedad grave (requiriendo hospitalización), y cuya tasa depende de la edad</p>
+<p>6 - Los individuos hospitalizados: o bien se recuperan o se deterioran y se vuelven críticos pasando a cuidado intensivo (ICU) (edad - dependiente)</p>
+<p>7 - Las personas gravemente enfermas regresan al hospital regular o mueren esto depende de la (edad - dependiente)</p>
 </div>
 
 
