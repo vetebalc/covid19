@@ -1,28 +1,24 @@
-## Estadísticas
+# Estadísticas
 
-Estadísticas globales
+## Estadísticas globales
 
 <img src="plots/global_log.jpg" width="600px">
 
-Estadísticas MERCOSUR
+## Estadísticas países limítrofes
 
-<img src="plots/latam_lineal.jpg" width="600px">
+<img src="plots/p_latam.jpg" width="600px">
 
-Estadísticas Argentina
+## Estadísticas Argentina
 
 <img src="plots/ARG_bars.jpg" width="600px">
 
-Estadísticas partido de Balcarce y aledaños
+## Estadísticas Balcarce y zona
 
 <img src="plots/mapa.jpg" width="600px">
 
 ---
 
 ## Proyecciones
-
-Este gráfico muestra una proyección sencilla de los casos en Argentina
-
-<img src="plots/models_ARG.jpg" width="600px">
 
 ### Modelado epidemiológico 
 
@@ -40,8 +36,6 @@ S -> I modelado por tasa de infección (R0)(R0 afectado por las intervenciones �
 
 ## Fuentes de datos
 
-COVID-19 Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
+Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
 
-COVID-19 Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
-
-COVID-19 Buenos Aires:  [Ministerio de Salud de Buenos Aires](https://www.gba.gob.ar/saludprovincia/boletin_epidemiologico)
+Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
