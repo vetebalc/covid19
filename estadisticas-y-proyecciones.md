@@ -1,19 +1,19 @@
 # Estadísticas
 
 
-## Estadísticas Balcarce y zona
+## Balcarce y zona
 
 <img src="plots/mapa.jpg" width="600px">
 
-## Estadísticas Argentina
+## Argentina
 
 <img src="plots/ARG_bars.jpg" width="600px">
 
-## Estadísticas países limítrofes
+## Países limítrofes
 
 <img src="plots/p_latam.jpg" width="600px">
 
-## Estadísticas globales
+## Global
 
 <img src="plots/global_log.jpg" width="600px">
 
@@ -35,8 +35,8 @@ S -> I modelado por tasa de infección (R0)(R0 afectado por las intervenciones �
 
 ---
 
-## Fuentes de datos
+### Fuentes de datos
 
-Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
+- Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
+- Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)</small>
 
-Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
