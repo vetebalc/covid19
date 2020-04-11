@@ -1,20 +1,21 @@
 # Estadísticas
 
-## Estadísticas globales
 
-<img src="plots/global_log.jpg" width="600px">
+## Estadísticas Balcarce y zona
 
-## Estadísticas países limítrofes
-
-<img src="plots/p_latam.jpg" width="600px">
+<img src="plots/mapa.jpg" width="600px">
 
 ## Estadísticas Argentina
 
 <img src="plots/ARG_bars.jpg" width="600px">
 
-## Estadísticas Balcarce y zona
+## Estadísticas países limítrofes
 
-<img src="plots/mapa.jpg" width="600px">
+<img src="plots/p_latam.jpg" width="600px">
+
+## Estadísticas globales
+
+<img src="plots/global_log.jpg" width="600px">
 
 ---
 
