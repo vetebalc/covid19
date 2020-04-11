@@ -17,7 +17,9 @@ ARG_bars <- arg %>%
   scale_x_date(limits = c(Sys.Date() - dias_epidemia, Sys.Date()),expand = c(0, 0),
                breaks = "2 days", minor_breaks = "1 day", 
                labels=scales::date_format("%d/%m"))+
-  labs(y="", x="")+
+  labs(y="", x="",
+       title = "Casos confirmados en Argentina", 
+       subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ARG_bars
 

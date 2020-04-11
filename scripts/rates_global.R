@@ -25,7 +25,7 @@ p_glob  <- dglob %>%
                 labels=c(0,1,10,100,1000,10000,100000))+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
        title = "Casos confirmados", 
-       subtitle = "Acumulados (escala logarítmica)")+
+       subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
   ggrepel::geom_text_repel(data=dglob  %>% 
               arrange(desc(confirmed)) %>% 
               group_by(country) %>% 
@@ -72,7 +72,7 @@ p_latam <- latam_long %>%
   scale_color_discrete()+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
        title = "Casos confirmados", 
-       subtitle = "Acumulados (escala logarítmica)")+
+       subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
   facet_wrap(~var, scales = "free_y", ncol=1)+
   ggrepel::geom_text_repel(data=latam_long %>% 
                            arrange(desc(val)) %>% 

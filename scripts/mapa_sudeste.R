@@ -1,9 +1,9 @@
 pacman::p_load(tidyverse, sf)
 
-url_muni <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20Prov%20BSAS.csv"
+url_muni <- "https://raw.githubusercontent.com/SistemasMapache/Covid19arData/master/CSV/Covid19arData%20-%20Prov_BSAS.csv"
 url_muni %>%
   read_csv(col_types = cols()) %>% 
-  mutate(NAM=Partido) -> bsas
+  mutate(NAM=Municipio) -> bsas
 
 muni <- st_read("kml/muni/municipio.shp", quiet = T) 
 
@@ -19,16 +19,18 @@ SEBA <- muni %>%
 #             color = "darkblue", check_overlap = TRUE)
 
 map1 <- ggplot(SEBA) +
-  geom_sf(aes(fill=Confirmados))+
+  geom_sf(aes(fill=Casos))+
   scale_fill_gradient2(
                      low = 'green2',
                        mid = 'yellow',
                        high = 'red3',
                        na.value = 'gray95',
-                     breaks = seq(0, 10, 2), 
-                     labels = seq(0, 10, 2))+
+                     breaks = seq(0, 14, 2), 
+                     labels = seq(0, 14, 2))+
   geom_text(aes(x=X, y=Y, label= NAM), size = 3,
-            color = "darkblue", check_overlap = TRUE)+  
+            color = "darkblue", check_overlap = TRUE)+
+  labs(title = "Casos confirmados por municipio", 
+       subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
   theme_void()  
 
 # map1
