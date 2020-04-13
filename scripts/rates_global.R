@@ -20,9 +20,9 @@ p_glob  <- dglob %>%
   scale_x_continuous(expand = c(0.1, 0)) +  
   # scale_y_continuous() +  
   scale_color_discrete()+
-  scale_y_log10(limits = c(1,1e6), expand = c(0.1, 0),
-                breaks=c(0,1,10,100,1000,10000,100000),
-                labels=c(0,1,10,100,1000,10000,100000))+
+  scale_y_log10(limits = c(1,1000000), expand = c(0.1, 0),
+                breaks=c(1,10,100,1000,10000,100000,1000000),
+                labels=c(1,10,100,"1k","10k","100k","1m"   ))+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
        title = "Casos confirmados", 
        subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
@@ -68,9 +68,9 @@ p_latam <- latam_long %>%
   ggplot(aes(matched_days, val))+ 
   geom_line(aes(col=country), size=1.1)+
   # scale_size_manual(guide=FALSE, values = c(0.5, rep(1, nlevels(dglob$country)-1)))+
-  scale_y_log10(limits = c(1,1e6), expand = c(0.1, 0),
-                breaks=c(0,1,10,100,1000,10000,100000),
-                labels=c(0,1,10,100,1000,10000,100000))+
+  scale_y_log10(limits = c(1,30000), expand = c(0.1, 0),
+                breaks=c(0,1,10,100,1000,10000),
+                labels=c(0,1,10,100,"1k","10k"))+
   scale_x_continuous(expand = c(0.1, 0)) +  
   scale_color_discrete()+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
