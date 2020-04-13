@@ -13,8 +13,6 @@
 
 <img src="plots/global_log.jpg" width="600px">
 
----
-
 ### Fuentes de datos
 
 - Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
