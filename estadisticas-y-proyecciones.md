@@ -5,11 +5,7 @@
 
 <img src="plots/mapa.jpg" width="600px">
 
-## Argentina
-
-<img src="plots/ARG_bars.jpg" width="600px">
-
-## Países limítrofes
+## Argentina y países limítrofes
 
 <img src="plots/p_latam.jpg" width="600px">
 
@@ -19,7 +15,14 @@
 
 ---
 
-## Proyecciones
+### Fuentes de datos
+
+- Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
+- Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)
+
+---
+
+# Proyecciones
 
 ### Modelado epidemiológico 
 
@@ -32,11 +35,3 @@ En este caso haremos uso de un modelo clasico de epidemiologia de enfermedades i
 S-Susceptible, E-expuesto (infectado), I-Infeccioso (que contagia) y R-Recuperado
 H-hospitalizados, C-críticos (UCI), y D - difuntos.  
 S -> I modelado por tasa de infección (R0)(R0 afectado por las intervenciones “Int” y la estacionalidad “∿”). Ld: período de latencia; Id:periodo infeccioso. 
-
----
-
-### Fuentes de datos
-
-- Argentina: [Sistemas Mapache](https://github.com/SistemasMapache/Covid19arData)
-- Global: [Johns Hopkins CSSE](https://github.com/CSSEGISandData/COVID-19)</small>
-
