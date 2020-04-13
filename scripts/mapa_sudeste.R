@@ -24,9 +24,7 @@ map1 <- ggplot(SEBA) +
                      low = 'green2',
                        mid = 'yellow',
                        high = 'red3',
-                       na.value = 'gray95',
-                     breaks = seq(0, 14, 2), 
-                     labels = seq(0, 14, 2))+
+                       na.value = 'gray95',)+
   geom_text(aes(x=X, y=Y, label= NAM), size = 3,
             color = "darkblue", check_overlap = TRUE)+
   labs(title = "Casos confirmados por municipio", 
@@ -34,4 +32,4 @@ map1 <- ggplot(SEBA) +
   theme_void()  
 
 # map1
-ggsave(here::here("plots", "mapa.jpg"), width=6,height=6,units="in",dpi=150)
+ggsave(here::here("plots", "mapa.jpg"), width=6,height=5,units="in",dpi=200)

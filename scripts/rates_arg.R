@@ -23,7 +23,7 @@ ARG_bars <- arg %>%
   theme(axis.text.x = element_text(angle = 60, hjust = 1))
 ARG_bars
 
-ggsave(here::here("plots", "ARG_bars.jpg"), width=6,height=6,units="in",dpi=150)
+ggsave(here::here("plots", "ARG_bars.jpg"), width=6,height=6,units="in",dpi=200)
 # ARG_points <- arg %>% 
 #   dplyr::select(fecha, `COVID positivos` = casos, Fallecidos=fallecidos)%>%  
 #   pivot_longer(-fecha, names_to = "var", values_to = "val") %>%

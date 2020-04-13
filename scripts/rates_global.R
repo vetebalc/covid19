@@ -34,7 +34,7 @@ p_glob  <- dglob %>%
             position=position_nudge(0.2), hjust=0, show.legend=FALSE)
 # p_glob
 
-ggsave(here::here("plots", "global_log.jpg"), width=6, height=4, units="in", dpi=300)
+ggsave(here::here("plots", "global_log.jpg"), width=6, height=4, units="in", dpi=200)
 
 p_growthF <- dglob %>%
   mutate(growth_factor = (confirmed / lag(confirmed, default = first(confirmed))-1)*100) %>% 
@@ -68,10 +68,13 @@ p_latam <- latam_long %>%
   ggplot(aes(matched_days, val))+ 
   geom_line(aes(col=country), size=1.1)+
   # scale_size_manual(guide=FALSE, values = c(0.5, rep(1, nlevels(dglob$country)-1)))+
+  scale_y_log10(limits = c(1,1e6), expand = c(0.1, 0),
+                breaks=c(0,1,10,100,1000,10000,100000),
+                labels=c(0,1,10,100,1000,10000,100000))+
   scale_x_continuous(expand = c(0.1, 0)) +  
   scale_color_discrete()+
   labs(x="Días desde inicio de la epidemia", col= NULL, y = "",
-       title = "Casos confirmados", 
+       title = "Casos confirmados",
        subtitle = paste("Datos disponibles al",format(as.Date(Sys.Date(), format = "%Y%m%d"), "%d/%m/%y")))+
   facet_wrap(~var, scales = "free_y", ncol=1)+
   ggrepel::geom_text_repel(data=latam_long %>% 
@@ -83,7 +86,7 @@ p_latam <- latam_long %>%
                          hjust=0, show.legend=FALSE)  
 # p_latam
 
-ggsave(here::here("plots", "p_latam.jpg"), width=6, height=4, units="in", dpi=300)
+ggsave(here::here("plots", "p_latam.jpg"), width=6, height=9, units="in", dpi=200)
 
 p_growthF_latam <- latam %>%
   mutate(growth_factor = (confirmed / lag(confirmed, default = first(confirmed))-1)*100) %>% 
