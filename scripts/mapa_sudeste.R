@@ -9,7 +9,7 @@ muni <- st_read("kml/muni/municipio.shp", quiet = T)
 
 SEBA <- muni %>% 
   cbind(., st_coordinates(st_centroid(muni$geometry))) %>% 
-  filter(between(Y, -40, -36.5), between(X, -60.6, -57)) %>% 
+  filter(between(Y, -40, -36), between(X, -61.5, -56)) %>% 
   dplyr::select(NAM, X,Y,geometry) %>% 
   left_join(bsas, by="NAM")
 
